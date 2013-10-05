@@ -2,6 +2,10 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
+# Template
+GET     /t/                         controllers.Application.template(langStr="en-us")
+GET     /t/:langStr/                controllers.Application.template(langStr)
+
 # Home page
 GET     /                           controllers.Application.index
 
