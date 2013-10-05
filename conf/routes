@@ -5,11 +5,8 @@
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
-# Template
-GET     /t/                         controllers.Application.template(langStr="en-us")
-GET     /t/:langStr/                controllers.Application.template(langStr)
-
 # Home page
-# Remember to put all paths before this one, since it'll eat anything!
+# Remember to put all non-language paths before this one, since it'll eat anything!
 GET     /                           controllers.Application.index
 GET     /:langStr/                  controllers.Application.indexLang(langStr)
+GET     /:langStr/template.html     controllers.Application.template(langStr)
