@@ -1,5 +1,5 @@
-@()
+@()(implicit lang: play.api.i18n.Lang, currentPage: Function1[String, Call])
 
-@main("Page title") {
-  <span>This is the Play index</span>
+@main(Messages("page.index.title")) {
+  <span>@Messages("index.message")</span>
 }

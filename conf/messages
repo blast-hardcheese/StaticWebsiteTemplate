@@ -1,2 +1,5 @@
 page.template.title=Template Page
 template.message=This is the multi-language template page. The implicit parameters in this template are both very important. The "lang" parameter is what provides which language to use for Messages(), and currentPage is a function that generates the path to the current page, but in a different language.
+
+page.index.title=Index page
+index.message=This is the index page.
