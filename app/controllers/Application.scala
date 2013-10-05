@@ -3,7 +3,10 @@ package controllers
 import play.api._
 import play.api.mvc._
 
-object Application extends Controller {
+import playpackager.StaticGenerator
+
+object Application extends Controller with StaticGenerator {
+
   def buildLang(lang: String) = play.api.i18n.Lang(lang.toLowerCase)
 
   def doIndex(langStr: String) = {
@@ -29,4 +32,14 @@ object Application extends Controller {
   def template(langStr: String) = Action {
     Ok(doTemplate(langStr))
   }
+
+  def mapping:Map[String => Call, String => play.api.templates.HtmlFormat.Appendable] = Map(
+    routes.Application.indexLang _ -> doIndex _,
+    routes.Application.template _ -> doTemplate _
+  )
+
+  override def extraMaps = Map(
+    routes.Application.index.toString -> doIndex("en-us").toString
+  )
+
 }
