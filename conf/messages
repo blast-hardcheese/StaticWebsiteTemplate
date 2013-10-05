@@ -3,3 +3,6 @@ template.message=This is the multi-language template page. The implicit paramete
 
 page.index.title=Index page
 index.message=This is the index page.
+
+menu.home=Home
+menu.template=Template
