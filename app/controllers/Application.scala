@@ -33,7 +33,7 @@ object Application extends Controller with StaticGenerator {
     Ok(doTemplate(langStr))
   }
 
-  def mapping:Map[String => Call, String => play.api.templates.HtmlFormat.Appendable] = Map(
+  def mapping = Map(
     routes.Application.indexLang _ -> doIndex _,
     routes.Application.template _ -> doTemplate _
   )
